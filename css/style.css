@@ -11,6 +11,27 @@ header {
     width: 100%;
 }
 
+main {
+    display: flex;
+    justify-content: center;
+}
+
+#register-form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid black;
+    padding: 15px;
+}
+
+#register-form h1 {
+    font-size: 2rem;
+}
+
+#register-form hr {
+    margin: 10px;
+}
+
 #navbar {
     background-color: yellowgreen;
 }
