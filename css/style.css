@@ -3,6 +3,7 @@
     padding: 0;
     font-size: 1.2rem;
     box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
 header {
@@ -63,7 +64,7 @@ main {
 
 #register-form input[type="submit"] {
     color: white;
-    background-color: rgb(193, 160, 117);
+    background-color: rgb(164, 130, 85);
     width: 20%;
     align-self: center;
     border: 2px solid black;
@@ -78,7 +79,7 @@ main {
 
 #register-form input[type="submit"]:active {
     cursor: pointer;
-    background-color: rgb(164, 130, 85);
+    background-color: rgb(130, 102, 66);
 }
 
 #navbar {
