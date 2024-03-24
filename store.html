@@ -4,6 +4,7 @@
 <head>
     <title>D&D Alkohol Webshop</title>
     <meta charset="UTF-8">
+    <link rel="icon" href="img/beer.svg">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -12,8 +13,8 @@
         <header>
             <nav id="navbar">
                 <ul>
-                    <li><a href="home.html"><img src="../img/pepekys.png" alt="homehead-img" height="48px"
-                                id="home-head-img"></a>
+                    <li id="navbar-icon"><a href="home.html"><img src="img/beer.svg" alt="home-nav-img" height="48px"
+                                id="home-nav-img"></a>
                     <li><a href="home.html">Főoldal</a></li>
                     <li><a href="store.html">Ajánlataink</a></li>
                     <li><a href="cart.html">Kosár</a></li>
@@ -24,21 +25,41 @@
                 </ul>
             </nav>
         </header>
-        <div id="home-divis" class="highlight-text">
-            //Ez egy vizszintes vonallal válassza el a header-t a body-tól
+        <img src="img/headeralgohol.png" alt="hehealgoholxdd" id="home-header-img">
+        <div id="home-divis">
+            Tekintse meg ajánlatainkat
         </div>
         <main>
-            <h1>Ajánlataink</h1>
-        </main>
-        <footer>
-            <div id="home-foot">
-                //Üzletek / rólunk szegmens munkatársak bemutatása
-                <div id="shops">
+            <div id="store-body">
+                <div id="store-body-top">
+                    <h1>Ajánlataink</h1>
                 </div>
-                <div id="aboutus">
+                <div id="store-body-block">
+                    <div id="product-type">
+                        <ul id="store-left-nav">
+                            <li>Alkohol</li>
+                            <li>Üdítő</li>
+                            <li>Energiaital</li>
+                            <li>Házi termékek</li>
+                        </ul>
+                    </div>
+                    <div class="product-container">
+                        <div class="product-box">
+                            <div class="product-img">
+                                <img src="https://p1.akcdn.net/full/402305010.kobanyai-vilagos-0-5-l-4-3-dobozos.jpg" alt="kobanyai">
+                            </div>
+                            <div class="product-desc">
+                                <h3>Finom Sőr 0.5l</h3>
+                                <h2>250 Ft</h2>
+                            </div>
+                            <div class="product-button">
+                                <button>Kosárba</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </footer>
+        </main>
     </div>
 
 </body>
