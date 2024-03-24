@@ -139,7 +139,7 @@ section::after {
     justify-content: center;
     align-items: center;
     margin-block: 20px;
-    padding: 5px;
+    padding: 20px;
     width: 50%;
     height: 100%;
     background-color: rgba(255, 189, 4, 0.65);
