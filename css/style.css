@@ -2,7 +2,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-size: 1.2rem;
+    font-size: 22px;
     box-sizing: border-box;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
@@ -70,9 +70,9 @@ section::after {
     flex-direction: column;
     width: 30%;
     text-align: left;
-    background-color: rgba(114, 46, 55, .65);
+    background-color: rgba(255, 189, 4, 0.65);
     color: white;
-    border: 3px solid black;
+    border: 3px solid yellow;
     border-radius: 25px;
     padding: 20px;
 }
@@ -97,8 +97,8 @@ section::after {
 
 #auth-form input:not(input[type="submit"]) {
     background-color: black;
-    color: white;
-    border: 3px solid rgb(136, 76, 33);
+    color: yellow;
+    border: 3px solid yellow;
     border-radius: 25px;
     padding: 5px;
     outline: none;
@@ -107,18 +107,20 @@ section::after {
 #auth-form input[type="submit"] {
     position: relative;
     overflow: hidden;
-    color: white;
     cursor: pointer;
-    background-color: rgb(164, 130, 85);
+    color: rgb(0, 247, 255);
+    border: 3px black solid;
+    padding: 5px;
+    background: linear-gradient(to right, rgb(22, 91, 196), rgba(158, 12, 114, 0.753));
     width: fit-content;
     align-self: center;
-    border: 2px solid black;
     border-radius: 8px;
-    padding: 5px;
 }
 
 #auth-form input[type="submit"]:hover {
-    color: black;
+    background-color: #555;
+    color: white;
+    background: linear-gradient(to right, rgba(158, 12, 114, 0.753), rgb(22, 91, 196));
 }
 
 #auth-form input[type="submit"]:active {
@@ -126,6 +128,96 @@ section::after {
 }
 
 /*#endregion*/
+
+/* region profile */
+#profile {
+    border: 3px solid yellow;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-block: 20px;
+    padding: 5px;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(255, 189, 4, 0.65);
+}
+
+#profile * {
+    font-size: 1.15rem;
+}
+
+#profile span {
+    color: white;
+}
+
+#profile div {
+    width: 75%;
+}
+
+#profile>div * {
+    padding: 5px;
+}
+
+#profile h1 {
+    font-size: 2rem;
+}
+
+#profile h2 {
+    font-size: 1.5rem;
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+}
+
+#profile form {
+    display: flex;
+    flex-direction: column;
+}
+
+#profile select {
+    display: inline-block;
+    cursor: pointer;
+    color: rgb(0, 247, 255);
+    border: 3px black solid;
+    background: linear-gradient(to right, rgb(22, 91, 196), rgba(158, 12, 114, 0.753));
+    outline: none;
+}
+
+#profile option {
+    background-color: black;
+}
+
+#profile form>input {
+    width: 50%;
+    outline: none;
+    border-radius: 25px;
+    padding: 5px;
+    border: 2px solid yellow;
+    background-color: black;
+    color: yellow;
+}
+
+#profile form>input[type="submit"] {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    color: rgb(0, 247, 255);
+    border: 3px black solid;
+    background: linear-gradient(to right, rgb(22, 91, 196), rgba(158, 12, 114, 0.753));
+    width: fit-content;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+#profile form>input[type="submit"]:hover {
+    background-color: #555;
+    color: white;
+    background: linear-gradient(to right, rgba(158, 12, 114, 0.753), rgb(22, 91, 196));
+}
+
+/* endregion */
 
 /*#region Navbar*/
 #navbar {
