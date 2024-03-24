@@ -283,17 +283,17 @@ section::after {
     text-align: center;
 }
 
-#right-text {
+.right-text {
     float: right;
     text-align: right;
 }
 
-#left-text {
+.left-text {
     text-align: left;
     float: left;
 }
 
-#right-text>.right-section-title>h1 {
+.right-text>.right-section-title>h1 {
     float: right;
     font-size: 2rem;
     margin: 5px 5px 5px 5px;
@@ -301,7 +301,7 @@ section::after {
     padding-right: 15px;
 }
 
-#left-text>.left-section-title>h1 {
+.left-text>.left-section-title>h1 {
     float: left;
     font-size: 2rem;
     margin: 5px 5px 5px 5px;
@@ -388,7 +388,8 @@ div#home-body-block>section.right-section>img {
 }
 
 .gmap_iframe {
-    height: 390px !important;
+    width: 100%;
+    height: 392px !important;
 }
 
 #connections {
