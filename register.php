@@ -27,12 +27,12 @@
                 </ul>
             </nav>
         </header>
-        <div id="home-divis" class="highlight-text">
-            //Ez egy vizszintes vonallal válassza el a header-t a body-tól
+        <div id="home-divis">
+            Ha ital kell D&D
         </div>
         <main>
             <div id="auth-container">
-                <form action="POST" id="auth-form">
+                <form action="includes/register.php" method="POST" id="auth-form">
                     <h1>Regisztráció</h1>
                     <hr>
                     <label for="name">Felhasználónév</label>

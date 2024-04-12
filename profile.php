@@ -26,8 +26,8 @@
                 </ul>
             </nav>
         </header>
-        <div id="home-divis" class="highlight-text">
-            //Ez egy vizszintes vonallal válassza el a header-t a body-tól
+        <div id="home-divis">
+            Ha ital kell D&D
         </div>
         <main>
             <div id="profile">

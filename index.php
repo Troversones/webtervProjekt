@@ -20,7 +20,7 @@
                     <li><a href="store.php">Ajánlataink</a></li>
                     <li><a href="cart.php">Kosár</a></li>
                     <li><a href="profile.php">Profil</a></li>
-                    <li><a href="login.php">Bejelentekzés</a></li>
+                    <li><a href="login.php">Bejelentkezés</a></li>
                     <li><a href="register.php">Regisztráció</a></li>
                     <li><a href="" hidden>Admin felület</a></li>
                 </ul>
