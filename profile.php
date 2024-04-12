@@ -14,15 +14,14 @@
         <header>
             <nav id="navbar">
                 <ul>
-                    <li><a href="home.html"><img src="img/beer.svg" alt="homehead-img" height="48"
+                    <li><a href="index.php"><img src="img/beer.svg" alt="homehead-img" height="48"
                                 id="home-head-img"></a>
-                    </li>
-                    <li><a href="home.html">Főoldal</a></li>
-                    <li><a href="store.html">Ajánlataink</a></li>
-                    <li><a href="cart.html">Kosár</a></li>
-                    <li><a href="profile.html">Profil</a></li>
-                    <li><a href="">Bejelentekzés</a></li>
-                    <li><a href="register.html">Regisztráció</a></li>
+                    <li><a href="index.php">Főoldal</a></li>
+                    <li><a href="store.php">Ajánlataink</a></li>
+                    <li><a href="cart.php">Kosár</a></li>
+                    <li><a href="profile.php">Profil</a></li>
+                    <li><a href="login.php">Bejelentkezés</a></li>
+                    <li><a href="register.php">Regisztráció</a></li>
                     <li><a href="" hidden>Admin felület</a></li>
                 </ul>
             </nav>
@@ -31,17 +30,43 @@
             //Ez egy vizszintes vonallal válassza el a header-t a body-tól
         </div>
         <main>
-            <div id="auth-container">
-                <form action="POST" id="auth-form">
-                    <h1>Bejelentekzés</h1>
-                    <hr>
-                    <label for="email">Email cím</label>
-                    <input type="email" name="email" id="email" placeholder="pelda@peldamail.com">
-                    <label for="pwd1">Jelszó</label>
-                    <input type="password" name="pwd1" id="pwd1" placeholder="FeltorhetetlenJelszo123">
-                    <hr>
-                    <input type="submit" value="Bejelentekzés">
-                </form>
+            <div id="profile">
+                <h1>Üdvözlünk Peldanev!</h1>
+
+                <div id="profiledata">
+                    <h2>Adatok</h2>
+                    <p>E-mail cím: <span>pelda@peldamail.hu</span></p>
+                    <p>Szállítási cím: <span>Deszk, Papír utca 12</span></p>
+                    <p>Számlázási cím: <span>Azonos a szállítási címmel</span></p>
+                    <p>Kuponkód: <span>ALGOHÓL (15% kedvezmény)</span></p>
+                    <p>Fizetési mód:
+                        <select name="paymethod" id="paymethod">
+                            <option value="card">Bankkártya</option>
+                            <option value="cash">Készpénz</option>
+                            <option value="szep">Szépkártya</option>
+                        </select>
+                    </p>
+                </div>
+                <div id="options">
+                    <form action="POST">
+                        <h2>Jelszó módosítása</h2>
+                        <label for="prevpwd">Régi jelszó</label>
+                        <input type="password" name="prevpwd" id="prevpwd" placeholder="Régi jelszó">
+                        <label for="newvpwd">Új jelszó</label>
+                        <input type="password" name="newvpwd" id="newvpwd" placeholder="Új jelszó">
+                        <br>
+                        <input type="submit" value="Új jelszó beállítása">
+                    </form>
+                    <form action="POST">
+                        <h2>Email módosítása</h2>
+                        <label>Régi email</label>
+                        <span>pelda@peldamail.hu</span>
+                        <label for="newemail">Új email</label>
+                        <input type="email" name="newemail" id="newemail" placeholder="Új email">
+                        <br>
+                        <input type="submit" value="Új email beállítása">
+                    </form>
+                </div>
             </div>
         </main>
         <footer>

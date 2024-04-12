@@ -14,14 +14,14 @@
         <header>
             <nav id="navbar">
                 <ul>
-                    <li><a href="home.html"><img src="img/beer.svg" alt="home-nav-img" height="48"
+                    <li><a href="index.php"><img src="img/beer.svg" alt="home-nav-img" height="48"
                                 id="home-head-img"></a>
-                    <li><a href="home.html">Főoldal</a></li>
-                    <li><a href="store.html">Ajánlataink</a></li>
-                    <li><a href="cart.html">Kosár</a></li>
-                    <li><a href="profile.html">Profil</a></li>
-                    <li><a href="login.html">Bejelentekzés</a></li>
-                    <li><a href="register.html">Regisztráció</a></li>
+                    <li><a href="index.php">Főoldal</a></li>
+                    <li><a href="store.php">Ajánlataink</a></li>
+                    <li><a href="cart.php">Kosár</a></li>
+                    <li><a href="profile.php">Profil</a></li>
+                    <li><a href="login.php">Bejelentkezés</a></li>
+                    <li><a href="register.php">Regisztráció</a></li>
                     <li><a href="" hidden>Admin felület</a></li>
                 </ul>
             </nav>
