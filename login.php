@@ -40,7 +40,7 @@
                     <label for="pwd1">Jelszó</label>
                     <input type="password" name="pwd1" id="pwd1" placeholder="FeltorhetetlenJelszo123">
                     <hr>
-                    <input type="submit" value="Bejelentkezés">
+                    <input type="submit" value="Bejelentkezés" name="login">
                 </form>
             </div>
         </main>

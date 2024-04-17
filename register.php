@@ -44,7 +44,22 @@
                     <label for="pwd2">Jelszó újra</label>
                     <input type="password" name="pwd2" id="pwd2" placeholder="FeltorhetetlenJelszo123">
                     <hr>
-                    <input type="submit" value="Regisztráció">
+                    <input type="submit" value="Regisztráció" name="signup">
+                    <?php
+      if (isset($_GET["error"])) {
+        if ($_GET["error"] == "emptyinput") {
+          echo '<p class="errorcode">Kérjük minden mezőt töltsön ki!</p>';
+        } else if ($_GET["error"] == "invalidmail") {
+          echo '<p class="errorcode">Hibás e-mail cím!</p>';
+        } else if ($_GET["error"] == "passmatch") {
+          echo '<p class="errorcode">A jelszavak nem egyeznek!</p>';
+        } else if ($_GET["error"] == "emailtaken") {
+          echo '<p class="errorcode">Ez az email cím már foglalt!</p>';
+        } else if ($_GET["error"] == "stmtFailed") {
+          echo '<p class="errorcode">Hiba történt, próbálja újra!</p>';
+        }
+      }
+      ?>
                 </form>
             </div>
         </main>
