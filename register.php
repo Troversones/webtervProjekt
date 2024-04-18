@@ -32,7 +32,7 @@
         </div>
         <main>
             <div id="auth-container">
-                <form action="includes/register.php" method="POST" id="auth-form">
+                <form action="includes/handleRegister.php" method="POST" id="auth-form">
                     <h1>Regisztráció</h1>
                     <hr>
                     <label for="name">Felhasználónév</label>
@@ -45,6 +45,7 @@
                     <input type="password" name="pwd2" id="pwd2" placeholder="FeltorhetetlenJelszo123">
                     <hr>
                     <input type="submit" value="Regisztráció" name="signup">
+                    <div class="error-msg">
                     <?php
       if (isset($_GET["error"])) {
         if ($_GET["error"] == "emptyinput") {
@@ -60,6 +61,7 @@
         }
       }
       ?>
+                    </div>
                 </form>
             </div>
         </main>

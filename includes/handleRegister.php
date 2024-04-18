@@ -1,5 +1,5 @@
 <?php
-// require('kapcs.inc.php');
+require('func.php');
 
 if (isset($_POST["signup"])) {
     
@@ -8,27 +8,27 @@ if (isset($_POST["signup"])) {
     $pass = $_POST["pwd1"];
     $pass2 = $_POST["pwd2"];
 
-/*     if (emptyInputSignup($username,$email,$pass,$pass2) !== false) {
+    if (emptyInputSignup($username,$email,$pass,$pass2)) {
         header("location: ../register.php?error=emptyinput");
         exit();
     }
     
-    if (invalidEmail($email) !== false) {
+    if (invalidEmail($email)) {
         header("location: ../register.php?error=invalidmail");
         exit();
     }
 
-    if (passMatch($pass,$pass2) !== false) {
+    if (passMatch($pass,$pass2)) {
         header("location: ../register.php?error=passmatch");
         exit();
     }
 
-    if (emailExists($kapcs,$email) !== false) {
-        header("location: ../register.php?error=emailtaken");
-        exit();
-    }
+    // if (emailExists($kapcs,$email)) {
+    //     header("location: ../register.php?error=emailtaken");
+    //     exit();
+    // }
 
-    createUser($kapcs, $email, $username, $pass); */
+    // createUser($kapcs, $email, $username, $pass);
 }
 else{
     header("location: ../login.php");

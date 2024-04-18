@@ -32,15 +32,24 @@
         </div>
         <main>
             <div id="auth-container">
-                <form action="includes/login.php" method="POST" id="auth-form">
+                <form action="includes/handleLogin.php" method="POST" id="auth-form">
                     <h1>Bejelentkezés</h1>
                     <hr>
                     <label for="email">Email cím</label>
                     <input type="email" name="email" id="email" placeholder="pelda@peldamail.com">
-                    <label for="pwd1">Jelszó</label>
-                    <input type="password" name="pwd1" id="pwd1" placeholder="FeltorhetetlenJelszo123">
+                    <label for="pwd">Jelszó</label>
+                    <input type="password" name="pwd" id="pwd" placeholder="FeltorhetetlenJelszo123">
                     <hr>
                     <input type="submit" value="Bejelentkezés" name="login">
+                    <div class="error-msg">
+                        <?php
+                              if (isset($_GET["error"])) {
+                                if ($_GET["error"] == "emptyinput") {
+                                  echo '<p class="errorcode">Kérjük minden mezőt töltsön ki!</p>';
+                                }
+                              }
+                        ?>
+                    </div>
                 </form>
             </div>
         </main>

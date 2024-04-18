@@ -127,6 +127,14 @@ section::after {
     background-color: rgb(130, 102, 66);
 }
 
+.error-msg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    color: red;
+}
+
 /*#endregion*/
 
 /* region profile */
