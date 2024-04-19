@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="hu">
 
@@ -19,9 +23,15 @@
                     <li><a href="index.php">Főoldal</a></li>
                     <li><a href="store.php">Ajánlataink</a></li>
                     <li><a href="cart.php">Kosár</a></li>
-                    <li><a href="profile.php">Profil</a></li>
-                    <li><a href="login.php">Bejelentkezés</a></li>
-                    <li><a href="register.php">Regisztráció</a></li>
+                    <?php
+                    if (isset($_SESSION["username"])) {
+                        echo '<li><a href="profile.php">Profil</a></li>';
+                        echo '<li><a href="includes/logout.php">Kijelentkezés</a></li>';
+                    } else {
+                        echo '<li><a href="login.php">Bejelentkezés</a></li>';
+                        echo '<li><a href="register.php">Regisztráció</a></li>';
+                    }
+                    ?>
                     <li><a href="" hidden>Admin felület</a></li>
                 </ul>
             </nav>

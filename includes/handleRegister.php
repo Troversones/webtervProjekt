@@ -1,5 +1,6 @@
 <?php
 require('func.php');
+require('dbconnect.php');
 
 if (isset($_POST["signup"])) {
     
@@ -23,12 +24,12 @@ if (isset($_POST["signup"])) {
         exit();
     }
 
-    // if (emailExists($kapcs,$email)) {
-    //     header("location: ../register.php?error=emailtaken");
-    //     exit();
-    // }
+    if (nameExists($kapcs,$username)) {
+        header("location: ../register.php?error=usernametaken");
+        exit();
+    }
 
-    // createUser($kapcs, $email, $username, $pass);
+    createUser($kapcs, $username, $email, $pass);
 }
 else{
     header("location: ../login.php");

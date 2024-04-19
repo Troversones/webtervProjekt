@@ -1,3 +1,9 @@
+<?php
+session_start();
+require("includes/getData.php");
+require("includes/dbconnect.php");
+?>
+
 <!DOCTYPE html>
 <html lang="hu">
 
@@ -19,9 +25,15 @@
                     <li><a href="index.php">Főoldal</a></li>
                     <li><a href="store.php">Ajánlataink</a></li>
                     <li><a href="cart.php">Kosár</a></li>
-                    <li><a href="profile.php">Profil</a></li>
-                    <li><a href="login.php">Bejelentkezés</a></li>
-                    <li><a href="register.php">Regisztráció</a></li>
+                    <?php
+                    if (isset($_SESSION["username"])) {
+                        echo '<li><a href="profile.php">Profil</a></li>';
+                        echo '<li><a href="includes/logout.php">Kijelentkezés</a></li>';
+                    } else {
+                        echo '<li><a href="login.php">Bejelentkezés</a></li>';
+                        echo '<li><a href="register.php">Regisztráció</a></li>';
+                    }
+                    ?>
                     <li><a href="" hidden>Admin felület</a></li>
                 </ul>
             </nav>
@@ -31,40 +43,81 @@
         </div>
         <main>
             <div id="profile">
-                <h1>Üdvözlünk Peldanev!</h1>
+                <?php
+                echo '<h1>Üdvözlünk '.$_SESSION["username"].'!</h1>'
+                ?>
 
                 <div id="profiledata">
                     <h2>Adatok</h2>
-                    <p>E-mail cím: <span>pelda@peldamail.hu</span></p>
-                    <p>Szállítási cím: <span>Deszk, Papír utca 12</span></p>
-                    <p>Számlázási cím: <span>Azonos a szállítási címmel</span></p>
-                    <p>Kuponkód: <span>ALGOHÓL (15% kedvezmény)</span></p>
-                    <p>Fizetési mód:
-                        <select name="paymethod" id="paymethod">
-                            <option value="card">Bankkártya</option>
-                            <option value="cash">Készpénz</option>
-                            <option value="szep">Szépkártya</option>
-                        </select>
-                    </p>
+                    <div id="data">
+                        <div>
+                            <p>E-mail cím: <span><?php echo getEmail($kapcs, $_SESSION["username"])?></span></p>
+                            <p>Szállítási cím: <span><?php
+                            if (getAddress($kapcs, $_SESSION["username"])) {
+                                echo getAddress($kapcs, $_SESSION["username"]);
+                            } else {
+                                echo 'Nincs megadva';
+                            }
+                            ?></span></p>
+                            <p>Telefonszám: <span><?php
+                            if (getNumber($kapcs, $_SESSION["username"])) {
+                                echo getNumber($kapcs, $_SESSION["username"]);
+                            } else {
+                                echo 'Nincs megadva';
+                            }
+                            ?></span></p>
+                        </div>
+                        <div id="changedata">
+                            <form action="includes/changedata.php" method="POST" id="dataform">
+                                <label for="address">Szállítási cím</label>
+                                <input type="text" name="address">
+                                <label for="number">Telefonszám</label>
+                                <input type="number" name="number" maxlength="15"> <br>
+                                <input type="submit" value="Hozzáadás" name="data">
+                            </form>
+                        </div>
+                    </div>
                 </div>
                 <div id="options">
-                    <form action="POST">
+                    <form method="POST" action="includes/changepassword.php">
                         <h2>Jelszó módosítása</h2>
                         <label for="prevpwd">Régi jelszó</label>
-                        <input type="password" name="prevpwd" id="prevpwd" placeholder="Régi jelszó">
+                        <input type="password" name="oldpwd" placeholder="Régi jelszó">
                         <label for="newvpwd">Új jelszó</label>
-                        <input type="password" name="newvpwd" id="newvpwd" placeholder="Új jelszó">
+                        <input type="password" name="pwd" placeholder="Új jelszó">
                         <br>
-                        <input type="submit" value="Új jelszó beállítása">
+                        <input type="submit" name="newpwd" value="Új jelszó beállítása">
+                        <?php
+                              if (isset($_GET["success"])) {
+                                if ($_GET["success"] == "passchange") {
+                                    echo '<br>';
+                                    echo '<p>Sikeres jelszó módosítás!</p>';
+                                }
+                              }
+                              if (isset($_GET["error"])) {
+                                if ($_GET["error"] == "oldpassnotmatches") {
+                                    echo '<br>';
+                                    echo '<p>A régi jelszó nem jó!</p>';
+                                }
+                              }
+                        ?>
                     </form>
-                    <form action="POST">
+                    <form method="POST" action="includes/changeemail.php">
                         <h2>Email módosítása</h2>
                         <label>Régi email</label>
-                        <span>pelda@peldamail.hu</span>
+                        <span><?php echo $_SESSION["email"]?></span>
                         <label for="newemail">Új email</label>
-                        <input type="email" name="newemail" id="newemail" placeholder="Új email">
+                        <input type="email" name="email"placeholder="Új email">
                         <br>
-                        <input type="submit" value="Új email beállítása">
+                        <input type="submit" value="Új email beállítása" name="newemail">
+                        <?php
+                              if (isset($_GET["success"])) {
+                                if ($_GET["success"] == "emailchange") {
+                                    echo '<br>';
+                                    echo '<p>Sikeres e-mail cím módosítás!</p>';
+                                }
+                              }
+                        ?>
                     </form>
                 </div>
             </div>

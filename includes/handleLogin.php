@@ -1,17 +1,18 @@
 <?php
 require('func.php');
+require('dbconnect.php');
 
 if (isset($_POST['login'])) {
 
-    $email = $_POST["email"];
+    $username = $_POST["name"];
     $pass = $_POST["pwd"];
 
-    if (emptyInputLogin($email,$pass) !== false) {
+    if (emptyInputLogin($username,$pass)) {
         header("location: ../login.php?error=emptyinput");
         exit();
     }
 
-    // loginUser($kapcs, $email, $pass);
+    loginUser($kapcs, $username, $pass);
 }
 else {
     header("location: ../index.php");

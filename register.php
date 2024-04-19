@@ -20,7 +20,6 @@
                     <li><a href="index.php">Főoldal</a></li>
                     <li><a href="store.php">Ajánlataink</a></li>
                     <li><a href="cart.php">Kosár</a></li>
-                    <li><a href="profile.php">Profil</a></li>
                     <li><a href="login.php">Bejelentkezés</a></li>
                     <li><a href="register.php">Regisztráció</a></li>
                     <li><a href="" hidden>Admin felület</a></li>
@@ -54,8 +53,8 @@
           echo '<p class="errorcode">Hibás e-mail cím!</p>';
         } else if ($_GET["error"] == "passmatch") {
           echo '<p class="errorcode">A jelszavak nem egyeznek!</p>';
-        } else if ($_GET["error"] == "emailtaken") {
-          echo '<p class="errorcode">Ez az email cím már foglalt!</p>';
+        } else if ($_GET["error"] == "usernametaken") {
+          echo '<p class="errorcode">Ez a felhasználónév már foglalt!</p>';
         } else if ($_GET["error"] == "stmtFailed") {
           echo '<p class="errorcode">Hiba történt, próbálja újra!</p>';
         }

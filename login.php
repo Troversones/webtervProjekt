@@ -20,7 +20,6 @@
                     <li><a href="index.php">Főoldal</a></li>
                     <li><a href="store.php">Ajánlataink</a></li>
                     <li><a href="cart.php">Kosár</a></li>
-                    <li><a href="profile.php">Profil</a></li>
                     <li><a href="">Bejelentkezés</a></li>
                     <li><a href="register.php">Regisztráció</a></li>
                     <li><a href="" hidden>Admin felület</a></li>
@@ -35,8 +34,8 @@
                 <form action="includes/handleLogin.php" method="POST" id="auth-form">
                     <h1>Bejelentkezés</h1>
                     <hr>
-                    <label for="email">Email cím</label>
-                    <input type="email" name="email" id="email" placeholder="pelda@peldamail.com">
+                    <label for="email">Felhasználónév</label>
+                    <input type="text" name="name" id="name" placeholder="Felhasználónév">
                     <label for="pwd">Jelszó</label>
                     <input type="password" name="pwd" id="pwd" placeholder="FeltorhetetlenJelszo123">
                     <hr>
@@ -46,6 +45,12 @@
                               if (isset($_GET["error"])) {
                                 if ($_GET["error"] == "emptyinput") {
                                   echo '<p class="errorcode">Kérjük minden mezőt töltsön ki!</p>';
+                                }
+                                if ($_GET["error"] == "wrongpass") {
+                                  echo '<p class="errorcode">Helytelen jelszó!</p>';
+                                }
+                                if ($_GET["error"] == "wrongname") {
+                                  echo '<p class="errorcode">Nincs ilyen felhasználó!</p>';
                                 }
                               }
                         ?>

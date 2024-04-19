@@ -148,7 +148,7 @@ section::after {
     align-items: center;
     margin-block: 20px;
     padding: 20px;
-    width: 50%;
+    width: 80%;
     height: 100%;
     background-color: rgba(255, 189, 4, 0.65);
 }
@@ -197,7 +197,7 @@ section::after {
     background-color: black;
 }
 
-#profile form>input {
+#options form>input {
     width: 50%;
     outline: none;
     border-radius: 25px;
@@ -207,7 +207,7 @@ section::after {
     color: yellow;
 }
 
-#profile form>input[type="submit"] {
+#options form>input[type="submit"] {
     position: relative;
     overflow: hidden;
     cursor: pointer;
@@ -219,7 +219,47 @@ section::after {
     padding: 5px;
 }
 
-#profile form>input[type="submit"]:hover {
+#options form>input[type="submit"]:hover {
+    background-color: #555;
+    color: white;
+    background: linear-gradient(to right, rgba(158, 12, 114, 0.753), rgb(22, 91, 196));
+}
+
+#data {
+    display: flex;
+}
+
+#changedata {
+    border-left: 1px solid black;
+}
+
+#dataform>input[type="submit"] {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    color: rgb(0, 247, 255);
+    border: 3px black solid;
+    background: linear-gradient(to right, rgb(22, 91, 196), rgba(158, 12, 114, 0.753));
+    width: fit-content;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+#dataform>input {
+    width: 150%;
+    outline: none;
+    border-radius: 25px;
+    padding: 5px;
+    border: 2px solid yellow;
+    background-color: black;
+    color: yellow;
+}
+
+#dataform>input[type="number"] {
+    width: 80%;
+}
+
+#dataform>input[type="submit"]:hover {
     background-color: #555;
     color: white;
     background: linear-gradient(to right, rgba(158, 12, 114, 0.753), rgb(22, 91, 196));
