@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["addToCart"])) {
                     </div>
                     <div class="product-container">
                         <?php
-                            include("includes/listProducts.php");
+                            include("includes/listStoreProducts.php");
                         ?>
                     </div>
                 </div>

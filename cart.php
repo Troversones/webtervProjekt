@@ -1,5 +1,7 @@
 <?php
 session_start();
+require("includes/dbconnect.php");
+require("includes/func.php");
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +12,7 @@ session_start();
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/beer.svg">
-    <script src="script.js"></script>
+    
 </head>
 
 <body>
@@ -47,105 +49,16 @@ session_start();
                 <div id="cart-body-block">
                     <div id="cart-product-type">
                         <ul id="cart-left-nav">
-                            <li>
-                                Finom Sőr 0.5l <br>
-                                250 Ft / db
-                                Jelenleg: 4 db
-                                Összár: 1000 Ft
-                            </li>
-                            <li>Termék 2</li>
-                            <li>Termék 3</li>
-                            <li>Termék 4</li>
-                            <li>Összár: 15 000 Ft</li>
+                            <?php
+                                include("includes/listCartNavItems.php");
+                            ?>
                         </ul>
                         <button id="cart-product-button">Vásárlás</button>
                     </div>
                     <div class="product-container">
-                        <div class="product-box">
-                            <div class="product-img">
-                                <img src="https://aquakristaly.hu/img/product_images/swhaIK0wyrweyLtAaDuofwkg5gI9rT0mdaiFOkBB.png"
-                                    alt="kobanyai">
-                            </div>
-                            <div class="product-desc">
-                                <h3>Finom Sőr 0.5l</h3>
-                                <h2>250 Ft</h2>
-                            </div>
-                            <div class="cart-button-container">
-                                <button class="cart-add">+</button>
-                                <button class="cart-minus">-</button>
-                                <button class="cart-remove">Eltávolít</button>
-                            </div>
-                        </div>
-                        <div class="product-box">
-                            <div class="product-img">
-                                <img src="img/sopronimeggy.jpg" alt="kepicsigivel">
-                            </div>
-                            <div class="product-desc">
-                                <h3>Kepi csigivel</h3>
-                                <h2>300 Ft</h2>
-                            </div>
-                            <div class="cart-button-container">
-                                <button class="cart-add">+</button>
-                                <button class="cart-minus">-</button>
-                                <button class="cart-remove">Eltávolít</button>
-                            </div>
-                        </div>
-                        <div class="product-box">
-                            <div class="product-img">
-                                <img src="img/Soproniovatos.jpg" alt="asmongoldtypeshit">
-                            </div>
-                            <div class="product-desc">
-                                <h3>Dr. Pepper</h3>
-                                <h2>200 Ft</h2>
-                            </div>
-                            <div class="cart-button-container">
-                                <button class="cart-add">+</button>
-                                <button class="cart-minus">-</button>
-                                <button class="cart-remove">Eltávolít</button>
-                            </div>
-                        </div>
-                        <div class="product-box">
-                            <div class="product-img">
-                                <img src="img/Desperados.jpg" alt="jack">
-                            </div>
-                            <div class="product-desc">
-                                <h3> hehe masiksor</h3>
-                                <h2> 300 Ft</h2>
-                            </div>
-                            <div class="cart-button-container">
-                                <button class="cart-add">+</button>
-                                <button class="cart-minus">-</button>
-                                <button class="cart-remove">Eltávolít</button>
-                            </div>
-                        </div>
-                        <div class="product-box">
-                            <div class="product-img">
-                                <img src="img/miller.jpg" alt="avgaudidriver">
-                            </div>
-                            <div class="product-desc">
-                                <h3>Sőr 0.5l</h3>
-                                <h2>500 Ft</h2>
-                            </div>
-                            <div class="cart-button-container">
-                                <button class="cart-add">+</button>
-                                <button class="cart-minus">-</button>
-                                <button class="cart-remove">Eltávolít</button>
-                            </div>
-                        </div>
-                        <div class="product-box">
-                            <div class="product-img">
-                                <img src="img/aranyaszok.jpg" alt="avg16evestypeshit">
-                            </div>
-                            <div class="product-desc">
-                                <h3>XD Sőr 0.5l</h3>
-                                <h2>350 Ft</h2>
-                            </div>
-                            <div class="cart-button-container">
-                                <button class="cart-add">+</button>
-                                <button class="cart-minus">-</button>
-                                <button class="cart-remove">Eltávolít</button>
-                            </div>
-                        </div>
+                        <?php
+                            include("includes/listCartItems.php");
+                        ?>
                     </div>
                 </div>
             </div>
@@ -202,7 +115,6 @@ session_start();
             </div>
         </footer>
     </div>
-
 </body>
 
 </html>
