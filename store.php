@@ -21,9 +21,9 @@ require("includes/dbconnect.php");
                     <li><a href="index.php"><img src="img/beer.svg" alt="home-nav-img" height="48" id="home-head-img"></a>
                     <li><a href="index.php">Főoldal</a></li>
                     <li><a href="store.php">Ajánlataink</a></li>
-                    <li><a href="cart.php">Kosár</a></li>
                     <?php
                     if (isset($_SESSION["username"])) {
+                        echo '<li><a href="cart.php">Kosár</a></li>';
                         echo '<li><a href="profile.php">Profil</a></li>';
                         echo '<li><a href="includes/logout.php">Kijelentkezés</a></li>';
                     } else {
@@ -49,7 +49,7 @@ require("includes/dbconnect.php");
                         <ul id="store-left-nav">
                             <li data-category="Sör">Sör</li>
                             <li data-category="Bor">Bor</li>
-                            <li data-category="Energia ital">Energiaital</li>
+                            <li data-category="Energia ital">Energia ital</li>
                             <li data-category="Üditő">Üditő</li>
                             <li data-category="Whiskey">Whiskey</li>
                             <li data-category="Likőr">Likőr</li>

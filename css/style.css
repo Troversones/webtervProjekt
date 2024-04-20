@@ -575,6 +575,7 @@ div#home-body-block>section.right-section>img {
 button:hover {
     background: red;
     color: black;
+    cursor: pointer;
 }
 
 ul#store-left-nav {

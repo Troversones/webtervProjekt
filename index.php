@@ -22,9 +22,9 @@ session_start();
                                 id="home-head-img"></a></li>
                     <li><a href="index.php">Főoldal</a></li>
                     <li><a href="store.php">Ajánlataink</a></li>
-                    <li><a href="cart.php">Kosár</a></li>
                     <?php
                     if (isset($_SESSION["username"])) {
+                        echo '<li><a href="cart.php">Kosár</a></li>';
                         echo '<li><a href="profile.php">Profil</a></li>';
                         echo '<li><a href="includes/logout.php">Kijelentkezés</a></li>';
                     } else {
@@ -91,7 +91,7 @@ session_start();
                     <section class="left-section">
                         <article class="left-text">
                             <div class="left-section-title">
-                                <h1>Elkötelezettség a Fenntarthatóság és a Társadalmi Felelősségvállalás</h1> <br>
+                                <h1>Elkötelezettség a Fenntarthatóság</h1> <br>
                                 <br>
                             </div>
                             <br>
