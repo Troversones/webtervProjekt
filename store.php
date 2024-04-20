@@ -1,5 +1,6 @@
 <?php
 session_start();
+require("includes/dbconnect.php");
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +11,6 @@ session_start();
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/beer.svg">
-    <script src="script.js"></script>
 </head>
 
 <body>
@@ -18,13 +18,12 @@ session_start();
         <header>
             <nav id="navbar">
                 <ul>
-                    <li><a href="index.php"><img src="img/beer.svg" alt="home-nav-img" height="48"
-                                id="home-head-img"></a>
+                    <li><a href="index.php"><img src="img/beer.svg" alt="home-nav-img" height="48" id="home-head-img"></a>
                     <li><a href="index.php">Főoldal</a></li>
                     <li><a href="store.php">Ajánlataink</a></li>
-                    <li><a href="cart.php">Kosár</a></li>
                     <?php
                     if (isset($_SESSION["username"])) {
+                        echo '<li><a href="cart.php">Kosár</a></li>';
                         echo '<li><a href="profile.php">Profil</a></li>';
                         echo '<li><a href="includes/logout.php">Kijelentkezés</a></li>';
                     } else {
@@ -48,86 +47,39 @@ session_start();
                 <div id="store-body-block">
                     <div id="product-type">
                         <ul id="store-left-nav">
-                            <li>Alkohol</li>
-                            <li>Üdítő</li>
-                            <li>Energiaital</li>
-                            <li>Házi termékek</li>
+                            <li data-category="Sör">Sör</li>
+                            <li data-category="Bor">Bor</li>
+                            <li data-category="Energia ital">Energia ital</li>
+                            <li data-category="Üditő">Üditő</li>
+                            <li data-category="Whiskey">Whiskey</li>
+                            <li data-category="Likőr">Likőr</li>
                         </ul>
                     </div>
                     <div class="product-container">
-                        <div class="product-box">
-                            <div class="product-img">
-                                <img src="https://aquakristaly.hu/img/product_images/swhaIK0wyrweyLtAaDuofwkg5gI9rT0mdaiFOkBB.png"
-                                    alt="kobanyai">
-                            </div>
-                            <div class="product-desc">
-                                <h3>Finom Sőr 0.5l</h3>
-                                <h2>250 Ft</h2>
-                            </div>
-                            <div class="product-button">
-                                <button>Kosárba</button>
-                            </div>
-                        </div>
-                        <div class="product-box">
-                            <div class="product-img">
-                                <img src="img/sopronimeggy.jpg" alt="kepicsigivel">
-                            </div>
-                            <div class="product-desc">
-                                <h3>Kepi csigivel</h3>
-                                <h2>300 Ft</h2>
-                            </div>
-                            <div class="product-button">
-                                <button>Kosárba</button>
-                            </div>
-                        </div>
-                        <div class="product-box">
-                            <div class="product-img">
-                                <img src="img/Soproniovatos.jpg" alt="asmongoldtypeshit">
-                            </div>
-                            <div class="product-desc">
-                                <h3>Dr. Pepper</h3>
-                                <h2>200 Ft</h2>
-                            </div>
-                            <div class="product-button">
-                                <button>Kosárba</button>
-                            </div>
-                        </div>
-                        <div class="product-box">
-                            <div class="product-img">
-                                <img src="img/Desperados.jpg" alt="jack">
-                            </div>
-                            <div class="product-desc">
-                                <h3> hehe masiksor</h3>
-                                <h2> 300 Ft</h2>
-                            </div>
-                            <div class="product-button">
-                                <button>Kosárba</button>
-                            </div>
-                        </div>
-                        <div class="product-box">
-                            <div class="product-img">
-                                <img src="img/miller.jpg" alt="avgaudidriver">
-                            </div>
-                            <div class="product-desc">
-                                <h3>Sőr 0.5l</h3>
-                                <h2>500 Ft</h2>
-                            </div>
-                            <div class="product-button">
-                                <button>Kosárba</button>
-                            </div>
-                        </div>
-                        <div class="product-box">
-                            <div class="product-img">
-                                <img src="img/aranyaszok.jpg" alt="avg16evestypeshit">
-                            </div>
-                            <div class="product-desc">
-                                <h3>XD Sőr 0.5l</h3>
-                                <h2>350 Ft</h2>
-                            </div>
-                            <div class="product-button">
-                                <button>Kosárba</button>
-                            </div>
-                        </div>
+                        <?php
+                        $query = "SELECT * FROM Products";
+                        $result = mysqli_query($kapcs, $query);
+
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo '<div class="product-box">';
+                                echo '<div class="product-img">';
+                                echo '<img src="img/' . $row["product_id"] . '.jpg" alt="' . $row["name"] . '">';
+                                echo '</div>';
+                                echo '<div class="product-desc">';
+                                echo '<h3>' . $row["name"] . '</h3>';
+                                echo '<h2>' . $row["price"] . ' Ft</h2>';
+                                echo '</div>';
+                                echo '<div class="product-button">';
+                                echo '<button>Kosárba</button>';
+                                echo '<input type="hidden" class="category" value="' . $row["category"] . '">';
+                                echo '</div>';
+                                echo '</div>';
+                            }
+                        } else {
+                            echo "Nincs elérhető termék.";
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -152,11 +104,7 @@ session_start();
             <div id="shops">
                 <h1>Üzleteink</h1>
                 <div class="mapouter">
-                    <div class="gmap_canvas"><iframe class="gmap_iframe"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2762.1922781810617!2d20.425186176754117!3d46.186732284940526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4744f5a30a864c6f%3A0x97db94adfc72df14!2zUsOzbmF5LW1hZ3TDoXI!5e0!3m2!1shu!2shu!4v1711295763471!5m2!1shu!2shu"
-                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe><a
-                            href="https://strandsgame.net/">Strands</a></div>
+                    <div class="gmap_canvas"><iframe class="gmap_iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2762.1922781810617!2d20.425186176754117!3d46.186732284940526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4744f5a30a864c6f%3A0x97db94adfc72df14!2zUsOzbmF5LW1hZ3TDoXI!5e0!3m2!1shu!2shu!4v1711295763471!5m2!1shu!2shu" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><a href="https://strandsgame.net/">Strands</a></div>
                 </div>
             </div>
             <div id="connections">
@@ -184,7 +132,7 @@ session_start();
             </div>
         </div>
     </footer>
-
+    <script src="script.js"></script>
 </body>
 
 </html>

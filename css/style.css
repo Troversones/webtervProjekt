@@ -579,6 +579,7 @@ div#home-body-block>section.right-section>img {
 button:hover {
     background: red;
     color: black;
+    cursor: pointer;
 }
 
 ul#store-left-nav {
@@ -606,6 +607,10 @@ ul#store-left-nav {
     color: white;
     cursor: pointer;
     background: linear-gradient(to right, rgba(158, 12, 114, 0.753), rgb(22, 91, 196));
+}
+
+li.selected {
+    background: linear-gradient(to right, rgba(158, 12, 114, 0.753), rgb(22, 91, 196)) !important;
 }
 
 /*#endregion*/
