@@ -15,3 +15,7 @@ document.querySelectorAll("#store-left-nav li").forEach(item => {
 });
 
 window.addEventListener("load", () => handleListItemClick(document.querySelector("#store-left-nav li[data-category='Sör']")));
+
+function openPopup() {
+    window.alert("A termék sikeresen a kosárba lett téve!");
+}
