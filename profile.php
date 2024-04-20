@@ -75,8 +75,42 @@ require("includes/dbconnect.php");
                                 <input type="number" name="number" maxlength="15"> <br>
                                 <input type="submit" value="Hozzáadás" name="data">
                             </form>
+                            <?php
+                              if (isset($_GET["success"])) {
+                                if ($_GET["success"] == "datachange") {
+                                    echo '<br>';
+                                    echo '<p>Adataid sikeresen megváltoztak!</p>';
+                                }
+                              }
+                        ?>
                         </div>
                     </div>
+                </div>
+                <div id="orders">
+                    <h2>Rendelések</h2>
+                    <?php
+                        $query = "SELECT DATE_FORMAT(orders.order_date, '%Y.%m.%d') AS formatted_date, 
+                        GROUP_CONCAT(products.name SEPARATOR ', ') AS products_ordered,
+                        SUM(orderdetails.quantity) AS total_quantity,
+                        SUM(orderdetails.quantity * products.price) AS total_price
+                        FROM orders
+                        INNER JOIN orderdetails ON orders.order_id = orderdetails.order_id
+                        INNER JOIN products ON products.product_id = orderdetails.product_id
+                        WHERE orders.user_id = '".$_SESSION["username"]."'
+                        GROUP BY formatted_date;";
+
+                        $row = mysqli_query($kapcs, $query);
+                        if (mysqli_num_rows($row) == 0) {
+                            echo '<p>Még nem rendeltél semmit.</p>';
+                        } else {
+                            while ($sor = mysqli_fetch_array($row)) {
+                                echo '<div class="order">';
+                                echo '<h3>'.$sor["formatted_date"].'</h3>';
+                                echo '<p>'.$sor["products_ordered"].' ('.$sor["total_quantity"].' db) - '.$sor["total_price"].' Ft</p>';
+                                echo '</div>';
+                            }
+                        }
+                    ?>
                 </div>
                 <div id="options">
                     <form method="POST" action="includes/changepassword.php">
