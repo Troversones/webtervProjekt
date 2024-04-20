@@ -604,6 +604,10 @@ ul#store-left-nav {
     background: linear-gradient(to right, rgba(158, 12, 114, 0.753), rgb(22, 91, 196));
 }
 
+li.selected {
+    background: linear-gradient(to right, rgba(158, 12, 114, 0.753), rgb(22, 91, 196)) !important;
+}
+
 /*#endregion*/
 
 /*#region Cart page*/
