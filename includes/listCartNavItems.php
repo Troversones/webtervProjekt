@@ -1,4 +1,5 @@
 <?php
+// NE NYÚLJ HOZZÁ MERT MŰKÖDIK
 if (isset($_SESSION["order_id"])) {
     $orderId = $_SESSION["order_id"];
     $queryOrderDetails = "SELECT Products.name, Products.price, Products.discount, OrderDetails.quantity FROM OrderDetails JOIN Products ON OrderDetails.product_id = Products.product_id WHERE OrderDetails.order_id = $orderId";

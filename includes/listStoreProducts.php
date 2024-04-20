@@ -10,11 +10,11 @@ $result = mysqli_query($kapcs, $query);
 
 if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
-        $discPrice = $row["price"];
+        $dicountPrice = $row["price"];
         if ($row["discount"] > 0) {
-            $discFact = (100 - $row["discount"]) / 100;
-            $discPrice = $row["price"] * $discFact;
-            $discPrice = round($discPrice, 0);
+            $discountFactor = (100 - $row["discount"]) / 100;
+            $dicountPrice = $row["price"] * $discountFactor;
+            $dicountPrice = round($dicountPrice, 0);
         }
 
         echo '<div class="product-box">';
@@ -24,7 +24,7 @@ if (mysqli_num_rows($result) > 0) {
         echo '<div class="product-desc">';
         echo '<h3>' . $row["name"] . '</h3>';
         if ($row["discount"] > 0) {
-            echo '<h2><strike>' . $row["price"] . ' Ft</strike> ' . $discPrice . ' Ft</h2>';
+            echo '<h2><strike>' . $row["price"] . ' Ft</strike> ' . $dicountPrice . ' Ft</h2>';
         } else {
             echo '<h2>' . $row["price"] . ' Ft</h2>';
         }
@@ -33,7 +33,7 @@ if (mysqli_num_rows($result) > 0) {
         echo '<form method="post" action="">';
         echo '<input type="hidden" name="productId" value="' . $row["product_id"] . '">';
         echo '<input type="hidden" name="userId" value="Troversones">';
-        echo '<input type="hidden" name="price" value="' . $discPrice . '">';
+        echo '<input type="hidden" name="price" value="' . $dicountPrice . '">';
         echo '<button type="submit" name="addToCart" onclick="openPopup()">Kosárba</button>';
         echo '</form>';
         echo '</div>';
