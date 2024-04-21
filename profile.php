@@ -12,7 +12,6 @@ require("includes/dbconnect.php");
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/beer.svg">
-    <script src="script.js"></script>
 </head>
 
 <body>

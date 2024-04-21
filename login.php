@@ -6,7 +6,6 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/beer.svg">
-    <script src="script.js"></script>
 </head>
 
 <body>
@@ -19,7 +18,6 @@
                     </li>
                     <li><a href="index.php">Főoldal</a></li>
                     <li><a href="store.php">Ajánlataink</a></li>
-                    <li><a href="cart.php">Kosár</a></li>
                     <li><a href="">Bejelentkezés</a></li>
                     <li><a href="register.php">Regisztráció</a></li>
                     <li><a href="" hidden>Admin felület</a></li>
