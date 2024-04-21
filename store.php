@@ -7,7 +7,7 @@ if (!isset($_SESSION["username"])) {
     exit;
 }
 
-if ($_SERVER["REQUEST_METHOD"] === "POST" &amp;&amp; isset($_POST["addToCart"])) {
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["addToCart"])) {
     include "includes/addToCart.php";
 }
 ?>

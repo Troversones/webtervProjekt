@@ -18,7 +18,7 @@
                     </li>
                     <li><a href="index.php">Főoldal</a></li>
                     <li><a href="store.php">Ajánlataink</a></li>
-                    <li><a href="">Bejelentkezés</a></li>
+                    <li><a href="login.php">Bejelentkezés</a></li>
                     <li><a href="register.php">Regisztráció</a></li>
                 </ul>
             </nav>

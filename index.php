@@ -6,7 +6,7 @@ session_start();
 <html lang="hu">
 
 <head>
-    <title>D&amp;amp;D Alkohol Webshop</title>
+    <title>D&amp;D Alkohol Webshop</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/beer.svg">
