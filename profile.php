@@ -88,9 +88,10 @@ require("includes/dbconnect.php");
                 </div>
                 <div id="orders">
                     <h2>Rendelések</h2>
+                    <div>
                     <?php
                         $query = "SELECT DATE_FORMAT(orders.order_date, '%Y.%m.%d') AS formatted_date, 
-                        GROUP_CONCAT(products.name SEPARATOR ', ') AS products_ordered,
+                        GROUP_CONCAT(products.name SEPARATOR '<br>') AS products_ordered,
                         SUM(orderdetails.quantity) AS total_quantity,
                         SUM(orderdetails.quantity * products.price) AS total_price
                         FROM orders
@@ -105,12 +106,16 @@ require("includes/dbconnect.php");
                         } else {
                             while ($sor = mysqli_fetch_array($row)) {
                                 echo '<div class="order">';
-                                echo '<h3>'.$sor["formatted_date"].'</h3>';
-                                echo '<p>'.$sor["products_ordered"].' ('.$sor["total_quantity"].' db) - '.$sor["total_price"].' Ft</p>';
+                                echo '<h2>'.$sor["formatted_date"].'</h2>';
+                                echo '<p>'.$sor["products_ordered"].'</p>';
+                                echo '<p>'.$sor["total_quantity"].' db termék</p>';
+                                setlocale(LC_MONETARY,"hu_HU");
+                                echo '<p>Összesen: '.number_format($sor["total_price"],2).' Ft</p>';
                                 echo '</div>';
                             }
                         }
                     ?>
+                    </div>
                 </div>
                 <div id="options">
                     <form method="POST" action="includes/changepassword.php">

@@ -265,6 +265,14 @@ section::after {
     background: linear-gradient(to right, rgba(158, 12, 114, 0.753), rgb(22, 91, 196));
 }
 
+#orders>div {
+    margin-left: 50px;
+}
+
+.order {
+    margin-bottom: 5px;
+}
+
 /* .order {
     background-color: green;
 } */
