@@ -6,7 +6,7 @@ session_start();
 <html lang="hu">
 
 <head>
-    <title>D&D Alkohol Webshop</title>
+    <title>D&amp;amp;D Alkohol Webshop</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/beer.svg">
@@ -31,13 +31,12 @@ session_start();
                         echo '<li><a href="register.php">Regisztráció</a></li>';
                     }
                     ?>
-                    <li><a href="" hidden>Admin felület</a></li>
                 </ul>
             </nav>
         </header>
         <img src="img/headeralgohol.png" alt="hehealgoholxdd" id="home-header-img">
         <div id="home-divis">
-            Ha ital kell D&D
+            Ha ital kell D&amp;D
         </div>
         <main>
             <div id="home-body">
@@ -53,7 +52,7 @@ session_start();
                                 <h1>A vállalkozásunk</h1> <br> <br>
                             </div>
                             <br>
-                            Üdvözöljük a D&D webshopjában, ahol a minőségi italok és alkoholos termékek széles
+                            Üdvözöljük a D&amp;D webshopjában, ahol a minőségi italok és alkoholos termékek széles
                             választékát kínáljuk az igényes vásárlóknak. Célunk, hogy egyedi és kiváló minőségű
                             termékeinkkel emlékezetessé tegyük minden egyes pillanatát az italok fogyasztásának, és
                             hogy
@@ -66,7 +65,7 @@ session_start();
                                 <h1>Történetünk</h1> <br> <br>
                             </div>
                             <br>
-                            A D&D sztorija az igényes italok és kiváló minőségű alkoholos termékek szerelmeseinek
+                            A D&amp;D sztorija az igényes italok és kiváló minőségű alkoholos termékek szerelmeseinek
                             története. A vállalkozást Kis Bence Róbert és Savanya Zsolt Szilveszter alapították
                             2077-ben, egy olyan időszakban,
                             amikor észrevették a piaci rést az exkluzív italokhoz és borokhoz való könnyű hozzáférés
@@ -82,7 +81,7 @@ session_start();
                                 <h1>Kiemelkedő Minőség és Ügyfélélmény</h1> <br> <br>
                             </div>
                             <br>
-                            A D&D számára az ügyfelek elégedettsége mindig a legfontosabb prioritás volt. Célunk,
+                            A D&amp;D számára az ügyfelek elégedettsége mindig a legfontosabb prioritás volt. Célunk,
                             hogy minőségi italokat és kiváló szolgáltatást nyújtsunk minden vásárlónknak, és hogy minden
                             érintett pozitív élményekkel távozzon tőlünk.
                         </article>
@@ -94,7 +93,7 @@ session_start();
                                 <br>
                             </div>
                             <br>
-                            A D&D számára a fenntarthatóság és a társadalmi felelősségvállalás alapvető értékek,
+                            A D&amp;D számára a fenntarthatóság és a társadalmi felelősségvállalás alapvető értékek,
                             amelyek vezérelnek minket minden tevékenységünk során. Tudatában vagyunk annak, hogy
                             vállalkozásunk tevékenysége hatással van környezetünkre és a társadalomra, és ezért
                             elkötelezettek vagyunk az iránt, hogy pozitív változást hozzunk létre.
@@ -111,8 +110,8 @@ session_start();
                     <hr>
                     <p>
                         <span>Projekt azonosító száma: XDHEHE-4.1.3-5-6-7-16-2077-00314</span> <br>
-                        <span>Kedvezményezett neve: D&D 2077 Kereskedelmi Kft.</span> <br>
-                        <span>A projekt címe: D&D 2077 Kft. Közlekedés igazgatás az ittasok részére</span> <br>
+                        <span>Kedvezményezett neve: D&amp;D 2077 Kereskedelmi Kft.</span> <br>
+                        <span>A projekt címe: D&amp;D 2077 Kft. Közlekedés igazgatás az ittasok részére</span> <br>
                         <span>Szerződött támogatás összege: 56 001 315 Ft (2 Eur)</span> <br>
                         <span>Támogatás mértéke: 67%</span> <br>
                         <span>Kölcsön összege: 61 538 610 Ft</span> <br>
@@ -135,11 +134,11 @@ session_start();
                     <div class="overlay">
                         <div id="conn-wrp">
                             <div id="conn-left">
-                                <span>HA ITAL KELL D&D</span> <br>
+                                <span>HA ITAL KELL D&amp;D</span> <br>
                                 <span>(30) 123-4567</span> <br>
                                 <span>(30) 987-6543</span> <br>
-                                <span>kapcsolat@d&d.hu</span> <br>
-                                <span>fb.com/d&d.aruhaz</span> <br>
+                                <span>kapcsolat@d&amp;d.hu</span> <br>
+                                <span>fb.com/d&amp;d.aruhaz</span> <br>
                                 <span>Kiszombor</span> <br>
                                 <span>Rónay-magtár</span>
                             </div>
@@ -147,7 +146,7 @@ session_start();
                                 <span>Ha kérdése van, kérjük, vegye fel velünk a kapcsolatot az alábbi elérhetőségek
                                     valamelyikén:</span> <br>
                                 <span>Telefonszám: +81 8317-3012 </span> <br>
-                                <span>E-mail: info@d&d.hu</span> <br>
+                                <span>E-mail: info@d&amp;d.hu</span> <br>
                                 <span>Ügyfélszolgálat nyitvatartása: Hétfőtől péntekig, 9:00 - 17:00 között</span>
                             </div>
                         </div>

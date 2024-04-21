@@ -7,7 +7,7 @@ if (!isset($_SESSION["username"])) {
     exit;
 }
 
-if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["addToCart"])) {
+if ($_SERVER["REQUEST_METHOD"] === "POST" &amp;&amp; isset($_POST["addToCart"])) {
     include "includes/addToCart.php";
 }
 ?>
@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["addToCart"])) {
 <html lang="hu">
 
 <head>
-    <title>D&D Alkohol Webshop</title>
+    <title>D&amp;D Alkohol Webshop</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/beer.svg">
@@ -40,7 +40,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["addToCart"])) {
                         echo '<li><a href="register.php">Regisztráció</a></li>';
                     }
                     ?>
-                    <li><a href="" hidden>Admin felület</a></li>
                 </ul>
             </nav>
         </header>
@@ -80,8 +79,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["addToCart"])) {
                 <hr>
                 <p>
                     <span>Projekt azonosító száma: XDHEHE-4.1.3-5-6-7-16-2077-00314</span> <br>
-                    <span>Kedvezményezett neve: D&D 2077 Kereskedelmi Kft.</span> <br>
-                    <span>A projekt címe: D&D 2077 Kft. Közlekedés igazgatás az ittasok részére</span> <br>
+                    <span>Kedvezményezett neve: D&amp;D 2077 Kereskedelmi Kft.</span> <br>
+                    <span>A projekt címe: D&amp;D 2077 Kft. Közlekedés igazgatás az ittasok részére</span> <br>
                     <span>Szerződött támogatás összege: 56 001 315 Ft (2 Eur)</span> <br>
                     <span>Támogatás mértéke: 67%</span> <br>
                     <span>Kölcsön összege: 61 538 610 Ft</span> <br>
@@ -100,11 +99,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["addToCart"])) {
                 <div class="overlay">
                     <div id="conn-wrp">
                         <div id="conn-left">
-                            <span>HA ITAL KELL D&D</span> <br>
+                            <span>HA ITAL KELL D&amp;D</span> <br>
                             <span>(30) 123-4567</span> <br>
                             <span>(30) 987-6543</span> <br>
-                            <span>kapcsolat@d&d.hu</span> <br>
-                            <span>fb.com/d&d.aruhaz</span> <br>
+                            <span>kapcsolat@d&amp;d.hu</span> <br>
+                            <span>fb.com/d&amp;d.aruhaz</span> <br>
                             <span>Kiszombor</span> <br>
                             <span>Rónay-magtár</span>
                         </div>
@@ -112,7 +111,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["addToCart"])) {
                             <span>Ha kérdése van, kérjük, vegye fel velünk a kapcsolatot az alábbi elérhetőségek
                                 valamelyikén:</span> <br>
                             <span>Telefonszám: +81 8317-3012 </span> <br>
-                            <span>E-mail: info@d&d.hu</span> <br>
+                            <span>E-mail: info@d&amp;d.hu</span> <br>
                             <span>Ügyfélszolgálat nyitvatartása: Hétfőtől péntekig, 9:00 - 17:00 között</span>
                         </div>
                     </div>
