@@ -1,7 +1,6 @@
 <?php
 session_start();
 require("includes/dbconnect.php");
-require("includes/func.php");
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +11,7 @@ require("includes/func.php");
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/beer.svg">
-    
+
 </head>
 
 <body>
@@ -20,8 +19,7 @@ require("includes/func.php");
         <header>
             <nav id="navbar">
                 <ul>
-                    <li><a href="index.php"><img src="img/beer.svg" alt="home-nav-img" height="48"
-                                id="home-head-img"></a>
+                    <li><a href="index.php"><img src="img/beer.svg" alt="home-nav-img" height="48" id="home-head-img"></a>
                     <li><a href="index.php">Főoldal</a></li>
                     <li><a href="store.php">Ajánlataink</a></li>
                     <li><a href="cart.php">Kosár</a></li>
@@ -50,14 +48,16 @@ require("includes/func.php");
                     <div id="cart-product-type">
                         <ul id="cart-left-nav">
                             <?php
-                                include("includes/listCartNavItems.php");
+                            include("includes/listCartNavItems.php");
                             ?>
                         </ul>
-                        <button id="cart-product-button">Vásárlás</button>
+                        <form method="POST">
+                            <button type="submit" name="finalize-order" id="cart-product-button">Vásárlás</button>
+                        </form>
                     </div>
                     <div class="product-container">
                         <?php
-                            include("includes/listCartItems.php");
+                        include("includes/listCartItems.php");
                         ?>
                     </div>
                 </div>
@@ -82,11 +82,7 @@ require("includes/func.php");
                 <div id="shops">
                     <h1>Üzleteink</h1>
                     <div class="mapouter">
-                        <div class="gmap_canvas"><iframe class="gmap_iframe"
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2762.1922781810617!2d20.425186176754117!3d46.186732284940526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4744f5a30a864c6f%3A0x97db94adfc72df14!2zUsOzbmF5LW1hZ3TDoXI!5e0!3m2!1shu!2shu!4v1711295763471!5m2!1shu!2shu"
-                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe><a
-                                href="https://strandsgame.net/">Strands</a></div>
+                        <div class="gmap_canvas"><iframe class="gmap_iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2762.1922781810617!2d20.425186176754117!3d46.186732284940526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4744f5a30a864c6f%3A0x97db94adfc72df14!2zUsOzbmF5LW1hZ3TDoXI!5e0!3m2!1shu!2shu!4v1711295763471!5m2!1shu!2shu" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><a href="https://strandsgame.net/">Strands</a></div>
                     </div>
                 </div>
                 <div id="connections">

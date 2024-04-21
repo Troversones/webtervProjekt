@@ -2,12 +2,10 @@
 session_start();
 require("includes/dbconnect.php");
 
-/* ha kész a login ezt kiszedem a kommentből
-if (!isset($_SESSION["user_id"])) {
+if (!isset($_SESSION["username"])) {
     header("Location: login.php");
     exit;
 }
-*/
 
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["addToCart"])) {
     include "includes/addToCart.php";
